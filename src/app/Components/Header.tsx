@@ -1,4 +1,5 @@
 import PrimaryButton from "./PrimaryButton";
+
 export default function Header() {
     return (
         <header className="absolute top-0 left-0 right-0 z-50 w-full fpx pt-5 max-container">

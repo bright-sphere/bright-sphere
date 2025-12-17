@@ -2,7 +2,7 @@ import Image from "next/image";
 import Pill from "./Pill";
 export default function Hero() {
     return (
-        <section className="flex flex-col gap-9 items-center fpx  pt-35  max-container">
+        <section className="flex flex-col gap-9 items-center fpx  pt-35 pb-20 max-container">
             {/* First Row */}
             <div className="flex flex-col items-center gap-9">
                 {/* First Inner Row */}

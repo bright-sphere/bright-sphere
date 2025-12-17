@@ -1,19 +1,19 @@
-import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Why from "./components/Why";
-import Third from "./components/Third";
-import Learn from "./components/Learn";
-import Different from "./components/Different";
-import Outcome from "./components/Outcome";
-import Certification from "./components/Certification";
-import CallToAction from "./components/CallToAction";
-import Trust from "./components/Trust";
-import Who from "./components/Who";
-import Footer from "./components/Footer";
-import StickyBar from "./components/StickyBar";
-import Toolkit from "./components/Toolkit";
-import Testimonials from "./components/Testimonials";
-import Test from "./components/Test";
+import Hero from "./Components/Hero";
+import Header from "./Components/Header";
+import Why from "./Components/Why";
+import Third from "./Components/Third";
+import Learn from "./Components/Learn";
+import Different from "./Components/Different";
+import Outcome from "./Components/Outcome";
+import Certification from "./Components/Certification";
+import CallToAction from "./Components/CallToAction";
+import Trust from "./Components/Trust";
+import Who from "./Components/Who";
+import Footer from "./Components/Footer";
+import StickyBar from "./Components/StickyBar";
+import Toolkit from "./Components/Toolkit";
+import Testimonials from "./Components/Testimonials";
+import Test from "./Components/Test";
 
 export default function Home() {
   return (
