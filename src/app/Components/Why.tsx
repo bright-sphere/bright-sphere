@@ -1,6 +1,8 @@
 import Image from "next/image";
 import PrimaryButton from "./PrimaryButton";
 import SecondaryButton from "./SecondaryButton";
+import { getWhatsAppLink } from "../lib/whatsapp";
+
 
 export default function Why() {
     const whyData = [
@@ -43,30 +45,32 @@ export default function Why() {
 
     ]
     return (
-        <section className="flex flex-col gap-18 items-center fp bg-white max-container">
-            <h2 className="text-[42px] font-semibold font-general-sans text-text-dark">Why Join <span className="gradient-text">AiMS?</span></h2>
+        <section className="w-full  bg-white">
+            <div className="w-full flex flex-col gap-18 fp items-center max-container">
+                <h2 className="text-[42px] font-semibold font-general-sans text-text-dark">Why Join <span className="gradient-text">AiMS?</span></h2>
 
-            <div className="w-full grid grid-cols-3 grid-rows-2 gap-15 text-center">
-                {whyData.map((item, index) => (
-                    <div className="relative">
-                        <div className="absolute inset-0 z-0 primary blur-3xl opacity-50"></div>
-                        <div className="relative h-full z-10 flex flex-col items-center gap-7  bg-white rounded-[15px] p-8   ">
+                <div className="w-full grid grid-cols-3 grid-rows-2 gap-15 text-center">
+                    {whyData.map((item, index) => (
+                        <div className="relative">
+                            <div className="absolute inset-0 z-0 primary blur-3xl opacity-50"></div>
+                            <div className="relative h-full z-1 flex flex-col items-center gap-7  bg-white rounded-[15px] p-8   ">
 
-                            <Image className={item.iconClass} src={item.icon} alt={item.title} width={50} height={50} />
-                            <div className="flex flex-col gap-3">
-                                <h4 className="text-2xl font-lato font-medium">{item.title}</h4>
-                                <p>{item.description}</p>
+                                <Image className={item.iconClass} src={item.icon} alt={item.title} width={50} height={50} />
+                                <div className="flex flex-col gap-3">
+                                    <h4 className="text-2xl font-lato font-medium">{item.title}</h4>
+                                    <p>{item.description}</p>
+                                </div>
+
+
                             </div>
-
-
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            <div className="w-full flex gap-5 justify-center">
-                <SecondaryButton>Talk to a Program Advisor</SecondaryButton>
-                <PrimaryButton className="px-23">Enroll Now</PrimaryButton>
+                <div className="w-full flex gap-5 justify-center">
+                    <SecondaryButton ><a href={getWhatsAppLink("Hi I want to know more about AiMS")} target="_blank" rel="noopener noreferrer">Talk to a Program Advisor</a></SecondaryButton>
+                    <PrimaryButton className="px-23">Enroll Now</PrimaryButton>
+                </div>
             </div>
 
 

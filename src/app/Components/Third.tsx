@@ -21,7 +21,7 @@ export default function Third() {
         },
     ]
     return (
-        <section className="grid grid-cols-2 grid-row-2 gap-10 fp max-container text-accent text-[42px] font-semibold font-general-sans">
+        <section id="third-section" className="grid grid-cols-2 grid-row-2 gap-10 fp max-container text-accent text-[42px] font-semibold font-general-sans">
             {data.map((item, index) => (
                 <div key={index} className="relative flex items-center justify-center min-h-[300px] bg-cover bg-center rounded-[20px] after:rounded-[20px] after:content-[''] after:absolute after:inset-0 after:overlay" style={{ backgroundImage: `url(${item.image})` }}>
                     <div className="hidden z-10 relative"> {item.title}</div>

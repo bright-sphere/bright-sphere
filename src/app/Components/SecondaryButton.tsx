@@ -1,6 +1,7 @@
 interface SecondaryButtonProps {
     children: React.ReactNode;
     className?: string;
+
 }
 
 export default function SecondaryButton({ children, className }: SecondaryButtonProps) {

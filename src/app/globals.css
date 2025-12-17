@@ -34,7 +34,9 @@
 
 @layer utilities {
 
-
+  /* .swiper-slide {
+    height: auto !important;
+  } */
 
   .max-container {
     max-width: 1440px;
@@ -91,4 +93,20 @@
 
 @utility fpb {
   padding-bottom: clamp(2.5rem, 1.8929rem + 3.0357vw, 4.625rem);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
 }
