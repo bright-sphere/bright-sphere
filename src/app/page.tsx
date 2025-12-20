@@ -12,26 +12,31 @@ import Who from "./Components/Who";
 import Footer from "./Components/Footer";
 import StickyBar from "./Components/StickyBar";
 import Toolkit from "./Components/Toolkit";
-import Test from "./Components/Test";
+import Test from "./Components/Testimonials";
+import PopupForm from "./Components/PopupForm";
+import { PopupProvider } from "./Context/PopupContext";
 
 export default function Home() {
   return (
-    <main className="ralative min-h-screen overflow-hidden">
-      <Header />
-      <Hero />
-      <Why />
-      <Third />
-      <Learn />
-      <Different />
-      <Outcome />
-      <Toolkit />
-      <Certification />
-      <CallToAction />
-      <Test />
-      <Trust />
-      <Who />
-      <Footer />
-      <StickyBar />
-    </main>
+    <PopupProvider>
+      <main className="ralative min-h-screen overflow-hidden">
+        <Header />
+        <Hero />
+        <Why />
+        <Third />
+        <Learn />
+        <Different />
+        <Outcome />
+        <Toolkit />
+        <Certification />
+        <CallToAction />
+        <Test />
+        <Trust />
+        <Who />
+        <Footer />
+        {/* <StickyBar /> */}
+        <PopupForm />
+      </main>
+    </PopupProvider>
   );
 }

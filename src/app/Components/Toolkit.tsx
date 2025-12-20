@@ -46,7 +46,7 @@ export default function Toolkit() {
 
                     <div className="grid grid-cols-2 grid-rows-repeat[3,auto] sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-2 lg:grid-rows-3 gap-3 md:gap-5 text-center">
                         {toolkitData.map((item, index) => (
-                            <div className="flex flex-col justify-center items-center gap-3 bg-white rounded-[15px] p-3 md:p-6">
+                            <div key={index} className="flex flex-col justify-center items-center gap-3 bg-white rounded-[15px] p-3 md:p-6">
                                 <div className="text-4xl md:text-[42px]  xxl:text-[64px] font-general-sans font-semibold gradient-text leading-none">0{index + 1}</div>
                                 <div className="text-sm md:text-base  xxl:text-[22px] font-lato font-medium leading-tight">{item}</div>
                             </div>

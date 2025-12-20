@@ -9,7 +9,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center justify-center gap-3 text-center">
 
                     <Pill wrapperClassName="lg:hidden" text="Real-world AI Skills" />
-                    <h1 className="text-2xl mlg:text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] xl:text-[52px] xxl:text-[64px] font-semibold font-general-sans text-text-dark">AiMS – <span className="gradient-text">AI For Mentoring Students</span></h1>
+                    <h1 className="text-2xl mlg:text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] xl:text-[52px] xxl:text-[64px] font-semibold font-general-sans text-text-dark"><span className="tm">AiMS</span> – <span className="gradient-text">AI For Mentoring Students</span></h1>
                     <h4 className="text-lg md:text-xl xl:text-2xl font-medium font-lato text-text-dark leading-tight">Live Online Skill Development Program for Grades 6–12</h4>
 
                 </div>

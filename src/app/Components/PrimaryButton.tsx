@@ -1,16 +1,21 @@
-import Link from "next/link";
+"use client";
+import { usePopup } from "../Context/PopupContext";
 interface PrimaryButtonProps {
     children: React.ReactNode;
     className?: string;
-
+    onClick?: () => void;
+    type?: "button" | "submit" | "reset";
 }
 
-export default function PrimaryButton({ children, className }: PrimaryButtonProps) {
-    const url = "https://pages.razorpay.com/ai-course"
-
+export default function PrimaryButton({ children, className, onClick, type = "button" }: PrimaryButtonProps) {
+    const { openPopup } = usePopup();
     return (
-
-        <button className={`${className} px-5 py-3 md:px-11 md:py-4 text-sm md:text-base xxl:text-lg text-white font-open-sans font-semibold rounded-full primary cursor-pointer`}><Link href={url}>{children}</Link></button>
-
+        <button
+            type={type}
+            className={`${className} px-5 py-3 md:px-11 md:py-4 text-sm md:text-base xxl:text-lg text-white font-open-sans font-semibold rounded-full primary cursor-pointer`}
+            onClick={openPopup}
+        >
+            {children}
+        </button>
     );
-}   
+}

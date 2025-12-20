@@ -30,7 +30,7 @@ export default function StickyBar() {
     if (!isVisible) return null;
 
     return (
-        <section className="w-full fixed bottom-5 left-0 right-0 z-10 animate-fade-in-up">
+        <section className="w-full fixed bottom-5 left-0 right-0 z-40 animate-fade-in-up">
             <div className="w-full flex fpx max-container">
                 <div className="w-full grid grid-cols-1 grid-rows-repeat[3,auto] xl:grid-cols-2 xl:grid-rows-repeat[2,auto] gap-1 p-5 lg:p-7 xxl:p-8 bg-white rounded-[15px] shadow-2xl">
                     <div className="order-1 flex items-center gap-2 md:gap-5">
