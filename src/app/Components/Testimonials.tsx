@@ -29,7 +29,7 @@ export default function Testimonials() {
             image: "/images/ai-innovator.webp",
         },
         {
-            name: "Hemanth Kishore, Grade 8",
+            name: "Hemanth, Grade 8",
             quote:
                 "Finally a course that focuses on creativity and not just coding syntax. Highly recommended!",
             image: "/images/creative-maker.webp",
@@ -40,7 +40,7 @@ export default function Testimonials() {
             image: "/images/confident.webp",
         },
         {
-            name: "Harshitha Mohan, Grade 9",
+            name: "Harshitha, Grade 9",
             quote: "Practical skills that help with school projects immediately.",
             image: "/images/future-ready.webp",
         },
@@ -176,8 +176,11 @@ export default function Testimonials() {
                             <SwiperSlide key={index} className="flex h-auto">
                                 <div className="flex flex-col flex-1 h-full gap-3 md:gap-8 bg-white rounded-t-[30px] rounded-br-[30px] px-7 sm:px-10 md:px-18 pt-10 sm:pt-12 md:pt-22 pb-5 md:pb-8">
                                     <div className="text-sm sm:text-base md:text-lg font-open-sans italic">“{testimonial.quote}”</div>
-                                    <div className="mt-auto text-base sm:text-lg md:text-[22px] font-lato font-medium text-text-dark self-end">
-                                        — {testimonial.name}
+                                    <div className="flex flex-col items-end gap-1 text-secondary italic">
+                                        <div className="text-xs sm:text-sm md:text-base font-open-sans">Parent of</div>
+                                        <div className="mt-auto text-base sm:text-lg md:text-[22px] font-lato font-medium text-text-dark ">
+                                            — {testimonial.name}
+                                        </div>
                                     </div>
                                 </div>
                             </SwiperSlide>

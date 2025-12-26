@@ -83,6 +83,11 @@
     margin: 0 auto;
   }
 
+  .float-icon {
+    will-change: transform;
+  }
+
+
 
   .tm {
     @apply relative;
@@ -92,6 +97,19 @@
 
     }
   }
+
+  .tm-2 {
+    @apply relative;
+
+    &::after {
+      @apply absolute -top-2 -right-2 lg:-top-2 lg:-right-3 content-["TM"] text-[#040A56] text-xxs xxl:text-xs font-open-sans font-bold;
+
+    }
+  }
+
+
+
+
 
 }
 
@@ -104,7 +122,19 @@
 
 @utility primary {
   background: linear-gradient(286.76deg, rgba(34, 113, 255, 0.9) 11.6%, rgba(136, 61, 237, 0.945933) 45.84%, #FC34DD 89.56%);
+  transition: all 0.6s ease;
 }
+
+@utility primary-button {
+  background: linear-gradient(286.76deg,
+      rgba(34, 113, 255, 0.9) 11.6%,
+      rgba(136, 61, 237, 0.945933) 45.84%,
+      #FC34DD 89.56%);
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+  transition: background-position 0.6s ease;
+}
+
 
 @utility overlay {
   background: linear-gradient(179.31deg, rgba(120, 120, 120, 0.3) 1.21%, rgba(0, 0, 0, 0.95) 94.06%);
@@ -159,4 +189,19 @@
 
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Rotating glow animation for pill component */
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-glow {
+  animation: rotateGlow 4s linear infinite;
 }

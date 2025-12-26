@@ -12,9 +12,9 @@ import Who from "./Components/Who";
 import Footer from "./Components/Footer";
 import StickyBar from "./Components/StickyBar";
 import Toolkit from "./Components/Toolkit";
-import Test from "./Components/Testimonials";
 import PopupForm from "./Components/PopupForm";
 import { PopupProvider } from "./Context/PopupContext";
+import Testimonials from "./Components/Testimonials";
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
         <Toolkit />
         <Certification />
         <CallToAction />
-        <Test />
+        <Testimonials />
         <Trust />
         <Who />
         <Footer />

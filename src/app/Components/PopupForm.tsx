@@ -72,7 +72,7 @@ export default function PopupForm() {
                         </select>
                     </div>
 
-                    <button type="submit" className="col-span-1 sm:col-span-2 mt-4 md:mt-2 xxl:mt-4 px-5 py-3 md:px-11 md:py-4 text-sm md:text-base xxl:text-lg text-white font-open-sans font-semibold rounded-full primary cursor-pointer hover:shadow-lg transition-shadow">Submit</button>
+                    <button type="submit" className="col-span-1 sm:col-span-2 mt-4 md:mt-2 xxl:mt-4 px-5 py-3 md:px-11 md:py-4 text-sm md:text-base xxl:text-lg text-white font-open-sans font-semibold rounded-full primary cursor-pointer hover:shadow-lg transition-shadow">Next</button>
                 </form>
             </div>
         </section>

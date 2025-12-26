@@ -36,10 +36,13 @@ export default function Different() {
 
             <div className="w-full grid grid-cols-1 grid-rows-repeat[6,auto] sm:grid-cols-2 sm:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-6 md:gap-8 xl:gap-10 xxl:gap-18">
                 {differentData.map((item, index) => (
-                    <div key={index} className="flex flex-col gap-3 md:gap-5 p-8 rounded-l-[50px] bg-white">
-                        <div className="text-6xl mlg:text-7xl xxl:text-[100px] font-syne gradient-text leading-none -mt-5">0{index + 1}</div>
-                        <h4 className="text-base mlg:text-lg md:text-xl xxl:text-2xl font-lato font-medium text-text-dark leading-tight">{item.title}</h4>
-                        <p>{item.description}</p>
+                    <div key={index} className="relative flex flex-col gap-3 md:gap-5 p-8 rounded-l-[50px] hover:rounded-l-[40px] bg-white overflow-hidden transition-all duration-300 ease-in-out group">
+                        {/* Gradient overlay - fades in on hover */}
+                        <div className="absolute inset-0 primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+
+                        <div className="relative z-10 text-6xl mlg:text-7xl xxl:text-[100px] font-syne gradient-text group-hover:text-white leading-none -mt-5 transition-colors duration-300">0{index + 1}</div>
+                        <h4 className="relative z-10 text-base mlg:text-lg md:text-xl xxl:text-2xl font-lato font-medium text-text-dark group-hover:text-white leading-tight transition-colors duration-300">{item.title}</h4>
+                        <p className="relative z-10 group-hover:text-white transition-colors duration-300">{item.description}</p>
                     </div>
                 ))}
             </div>
