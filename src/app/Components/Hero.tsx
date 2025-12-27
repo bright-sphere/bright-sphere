@@ -27,7 +27,7 @@ export default function Hero() {
 
                     <Pill wrapperClassName="lg:hidden" text="Real-world AI Skills" />
                     <h1 className="text-2xl mlg:text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] xl:text-[52px] xxl:text-[64px] font-semibold font-general-sans text-text-dark"><span className="tm">AiMS</span> – <span className="gradient-text">AI For Mentoring Students</span></h1>
-                    <h4 className="text-lg md:text-xl xl:text-2xl font-medium font-lato text-text-dark leading-tight">Live Online Skill Development Program for Grades 6–12</h4>
+                    <p className="text-lg md:text-xl xl:text-2xl font-medium font-lato text-text-dark leading-tight">Live Online Skill Development Program for Grades 6–12</p>
 
                 </div>
                 {/* End of First Inner Row */}

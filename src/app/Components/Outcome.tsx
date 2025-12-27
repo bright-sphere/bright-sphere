@@ -41,14 +41,14 @@ export default function Outcome() {
                 <h2 className="text-center text-2xl sm:text-3xl lg:text-[32px] xl:text-4xl xxl:text-[42px] font-semibold font-general-sans">Real<span className="gradient-text"> Outcomes Parents </span> Notice</h2>
 
 
-                <div className="w-full flex flex-col md:flex-row gap-5 justify-center relative text-xs mlg:text-sm lg:text-base xxl:text-xl text-white font-open-sans font-semibold">
+                <ul className="w-full flex flex-col md:flex-row gap-5 justify-center relative text-xs mlg:text-sm lg:text-base xxl:text-xl text-white font-open-sans font-semibold">
                     {outcomes.map((item, index) => (
-                        <div key={index} className={` ${item.className} md:absolute  bg-secondary px-5 py-2 rounded-[22px] w-max whitespace-pre-wrap `}>
+                        <li key={index} className={` ${item.className} md:absolute  bg-secondary px-5 py-2 rounded-[22px] w-max whitespace-pre-wrap `}>
                             {item.title}
-                        </div>
+                        </li>
                     ))}
                     <Image className="w-[60%] sm:w-[50%] md:w-[25%] lg:w-[30%] xl:w-[28%] xxl:w-[350px] xxl:h-[599px] self-center" src="/images/girl-2.webp" alt="Girl" width={350} height={599} />
-                </div>
+                </ul>
             </div>
         </section>
     );

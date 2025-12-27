@@ -18,13 +18,13 @@ export default function CheckListItem({
     gap = "gap-3",
 }: CheckListItemProps) {
     return (
-        <div className={`flex ${gap} items-center`}>
+        <li className={`flex ${gap} items-center`}>
             <div className={`flex justify-center items-center ${bgSize} ${bgClass} rounded-full shrink-0`}>
                 <svg className={svgSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 12L10.2426 16.2426L18.727 7.75732" stroke={svgColor} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
             <div className={` text-sm md:text-base xxl:text-xl text-${textColor} font-open-sans font-semibold leading-tight`}>{children}</div>
-        </div>
+        </li>
     );
 }

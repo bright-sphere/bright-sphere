@@ -43,7 +43,7 @@ const useCounter = (end: number, shouldStart: boolean, duration: number = 2000, 
 export default function Learn() {
 
     const [isVisible, setIsVisible] = useState(false);
-    const statsRef = useRef<HTMLDivElement>(null);
+    const statsRef = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -156,11 +156,11 @@ export default function Learn() {
                     {/* Second Column */}
                     <div className="w-full md:w-[50%] xl:w-[40%] flex flex-col gap-5 md:gap-8 rounded-[20px] p-5 md:p-7 lg:p-9 shadow-2xl order-1 md:order-2">
                         <h3 className="text-xl md:text-2xl  xxl:text-[34px] font-lato font-medium text-text-dark">Students learn to:</h3>
-                        <div className="flex flex-col gap-3 md:gap-4">
+                        <ul className="flex flex-col gap-3 md:gap-4">
                             {checkListItems.map((item, index) => (
                                 <CheckListItem key={index}>{item}</CheckListItem>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                     {/* End of Second Column */}
 
@@ -169,9 +169,9 @@ export default function Learn() {
                         <div className="text-sm sm:text-base xxl:text-xl font-open-sans font-semibold text-text-dark text-center md:text-left">Every student completes a project they can proudly showcase.</div>
 
                         {/* Added ref={statsRef} here so IntersectionObserver can detect it */}
-                        <div ref={statsRef} className="grid grid-cols-2 grid-rows-2 gap-5 text-white text-center">
+                        <ul ref={statsRef} className="grid grid-cols-2 grid-rows-2 gap-5 text-white text-center">
                             {statistics.map((statistic, index) => (
-                                <div key={index} className="flex flex-col gap-2 xxl:gap-4  items-center p-4 primary rounded-[10px]">
+                                <li key={index} className="flex flex-col gap-2 xxl:gap-4  items-center p-4 primary rounded-[10px]">
                                     <div className="text-sm sm:text-base xxl:text-lg font-open-sans font-bold">{statistic.title}</div>
                                     <div className="flex items-center gap-2">
                                         {statistic.icon && (
@@ -182,9 +182,9 @@ export default function Learn() {
                                     {statistic.subtitle && (
                                         <div className="text-xxs sm:text-xs lg:text-sm font-open-sans font-normal leading-tight ">{statistic.subtitle}</div>
                                     )}
-                                </div>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                     {/* End of Third Column */}
                 </div>
