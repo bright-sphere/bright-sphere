@@ -1,5 +1,5 @@
 
-const WHATSAPP_PHONE = "919876543210";
+const WHATSAPP_PHONE = "9108905064";
 
 export const getWhatsAppLink = (message?: string) => {
     const encodedMessage = message
