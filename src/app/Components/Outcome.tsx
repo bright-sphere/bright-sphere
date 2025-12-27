@@ -1,4 +1,5 @@
 import Image from "next/image";
+import GlowEffect from "./GlowEffect";
 
 export default function Outcome() {
     const outcomes = [
@@ -34,7 +35,8 @@ export default function Outcome() {
         },
     ];
     return (
-        <section className="w-full bg-white">
+        <section className="relative w-full bg-white">
+            <GlowEffect opacity="opacity-40" className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
             <div className="w-full flex flex-col items-center  gap-8 md:gap-28 fpx fpt  max-container  ">
                 <h2 className="text-center text-2xl sm:text-3xl lg:text-[32px] xl:text-4xl xxl:text-[42px] font-semibold font-general-sans">Real<span className="gradient-text"> Outcomes Parents </span> Notice</h2>
 

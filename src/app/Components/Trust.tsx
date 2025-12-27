@@ -1,5 +1,6 @@
 import Pill from "./Pill";
 import CheckListItem from "./CheckListItem";
+import GlowEffect from "./GlowEffect";
 export default function Trust() {
     const checkListItems = [
         "Live mentor-led classes",
@@ -10,7 +11,8 @@ export default function Trust() {
         "Limited seats for personalised attention"
     ]
     return (
-        <section className="w-full fp bg-white">
+        <section className="relative w-full fp bg-white overflow-y-hidden">
+            <GlowEffect width="w-[200px]" height="h-[200px]" opacity="opacity-60" className="right-0 top-0" />
             <div className="flex flex-col-reverse sm:flex-row gap-11 sm:gap-8 lg:gap-11 max-container">
                 <div className="w-full md:w-1/2 h-[284px] sm:h-auto bg-[url('/images/trust.webp')] bg-cover bg-center bg-no-repeat rounded-bl-[30px] md:rounded-bl-[120px]"></div>
                 <div className="w-full md:w-1/2 flex flex-col items-center sm:items-start gap-4">

@@ -1,9 +1,75 @@
+'use client'
 import Pill from "./Pill";
 import CheckListItem from "./CheckListItem";
 import Image from "next/image";
-import { isContext } from "vm";
+import GlowEffect from "./GlowEffect";
+import { useState, useEffect, useRef } from "react";
+
+const useCounter = (end: number, shouldStart: boolean, duration: number = 2000, decimals: number = 0) => {
+    const [count, setCount] = useState(0);
+    const hasAnimated = useRef(false);
+
+    useEffect(() => {
+        if (!shouldStart || hasAnimated.current) return;
+
+        hasAnimated.current = true;
+        let startTime: number | null = null;
+        let animationFrameId: number;
+
+        const animate = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percentage = Math.min(progress / duration, 1);
+
+            // Ease out quart
+            const ease = 1 - Math.pow(1 - percentage, 4);
+
+            const value = end * ease;
+            setCount(decimals > 0 ? parseFloat(value.toFixed(decimals)) : Math.floor(value));
+
+            if (progress < duration) {
+                animationFrameId = requestAnimationFrame(animate);
+            }
+        };
+
+        animationFrameId = requestAnimationFrame(animate);
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [end, duration, shouldStart, decimals]);
+
+    return count;
+};
 
 export default function Learn() {
+
+    const [isVisible, setIsVisible] = useState(false);
+    const statsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect(); // Only trigger once
+                }
+            },
+            {
+                threshold: 0.6, // Trigger when 60% visible
+            }
+        );
+
+        if (statsRef.current) {
+            observer.observe(statsRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    // Call hooks at component top level (React rule)
+    const ratingsCount = useCounter(4.7, isVisible, 2000, 1);
+    const impactCount = useCounter(95, isVisible, 2000);
+    const communityCount = useCounter(5, isVisible, 2000);
+    const expertiseCount = useCounter(5, isVisible, 2000);
 
     const pills = [
         {
@@ -24,27 +90,27 @@ export default function Learn() {
     const statistics = [
         {
             title: "Ratings",
-            value: "4.7",
+            value: ratingsCount,
             icon: "/icons/star.svg",
             subtitle: ""
         },
         {
             title: "Impact",
-            value: "95%",
+            value: `${impactCount}%`,
             icon: "",
             subtitle: "saw improvement in learning"
 
         },
         {
             title: "Community",
-            value: "5k+",
+            value: `${communityCount}k+`,
             icon: "",
             subtitle: "Learners"
 
         },
         {
             title: "Expertise",
-            value: "5+",
+            value: `${expertiseCount}+`,
             icon: "",
             subtitle: "Years"
 
@@ -64,7 +130,8 @@ export default function Learn() {
 
 
     return (
-        <section className="w-full bg-white">
+        <section className="relative w-full bg-white overflow-y-hidden">
+            <GlowEffect width="w-[200px]" height="h-[200px]" opacity="opacity-30" className="left-0 top-0" />
             <div className="relative w-full flex flex-col gap-12 md:gap-15 fp  max-container">
                 <Image className="block md:hidden xl:block absolute bottom-0 left-1/2  md:left-0 -translate-x-1/2 md:translate-x-0 w-[50%] xl:w-[30%] xxl:w-[437px] xxl:h-[541px]" src="/images/girl.webp" alt="Girl" width={437} height={541} />
                 {/* First Row */}
@@ -101,7 +168,8 @@ export default function Learn() {
                     <div className="w-full md:w-[50%] xl:w-[35%] flex flex-col justify-center gap-6 xxl:gap-11 order-2 md:order-3">
                         <div className="text-sm sm:text-base xxl:text-xl font-open-sans font-semibold text-text-dark text-center md:text-left">Every student completes a project they can proudly showcase.</div>
 
-                        <div className="grid grid-cols-2 grid-rows-2 gap-5 text-white text-center">
+                        {/* Added ref={statsRef} here so IntersectionObserver can detect it */}
+                        <div ref={statsRef} className="grid grid-cols-2 grid-rows-2 gap-5 text-white text-center">
                             {statistics.map((statistic, index) => (
                                 <div key={index} className="flex flex-col gap-2 xxl:gap-4  items-center p-4 primary rounded-[10px]">
                                     <div className="text-sm sm:text-base xxl:text-lg font-open-sans font-bold">{statistic.title}</div>

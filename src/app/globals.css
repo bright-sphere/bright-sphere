@@ -122,7 +122,7 @@
 
 @utility primary {
   background: linear-gradient(286.76deg, rgba(34, 113, 255, 0.9) 11.6%, rgba(136, 61, 237, 0.945933) 45.84%, #FC34DD 89.56%);
-  transition: all 0.6s ease;
+  /* transition: all 0.6s ease; */
 }
 
 @utility primary-button {

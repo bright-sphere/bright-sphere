@@ -3,6 +3,7 @@ import Image from "next/image";
 import Pill from "./Pill";
 import { useRef } from "react";
 import { useFloatingAnimation } from "../hooks/useFloatingAnimation";
+import GlowEffect from "./GlowEffect";
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -17,7 +18,8 @@ export default function Hero() {
 
 
     return (
-        <section className="flex flex-col gap-9 items-center fpx  pt-30 md:pt-35 max-container">
+        <section className="relative flex flex-col gap-9 items-center fpx  pt-30 md:pt-35 max-container">
+            <GlowEffect className="right-0 bottom-0" />
             {/* First Row */}
             <div className="flex flex-col items-center gap-3 lg:gap-9">
                 {/* First Inner Row */}
