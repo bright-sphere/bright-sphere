@@ -3,7 +3,6 @@
 import { useEffect, useState, FormEvent } from "react";
 import { usePopup } from "../Context/PopupContext";
 
-// TODO: Replace this with your Google Apps Script Web App URL after deployment
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFonlljxnOQKF1Htxcb3lg3BABgZ0S4dZyniOAqfYndLFhuu2i6BhzCdsLIfe_ygXZ/exec";
 
 interface FormData {
@@ -140,7 +139,21 @@ export default function PopupForm() {
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="phone" className="font-lato font-semibold">WhatsApp Number <span className="text-red-500">*</span></label>
-                            <input type="number" name="phone" placeholder="WhatsApp Number" required className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-secondary" disabled={isSubmitting} />
+                            <input
+                                type="tel"
+                                name="phone"
+                                inputMode="numeric"
+                                pattern="[0-9]{10}"
+                                title="Phone number must be 10 digits only"
+                                maxLength={10}
+                                placeholder="WhatsApp Number"
+                                required
+                                className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-secondary"
+                                disabled={isSubmitting}
+                                onInput={(e) => {
+                                    e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+                                }}
+                            />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="school" className="font-lato font-semibold">Student School <span className="text-red-500">*</span></label>
